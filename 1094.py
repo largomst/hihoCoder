@@ -1,11 +1,13 @@
-n, k = input().strip().split(' ')
+# python2
+
+n, k = raw_input().strip().split(' ')
 n, k = int(n), int(k)
 city_map = []
 local_map = []
 for n0 in range(n):
-    city_map.append(input().strip())
+    city_map.append(raw_input().strip())
 for n0 in range(3):
-    local_map.append(input().strip())
+    local_map.append(raw_input().strip())
 
 value = {'.': 1, 'H': 3, 'S': 5, 'P': 7, 'S': 9, 'G': 11, 'M': 13, 'T': 15}
 value_map = [[0] * n for i in range(len(city_map[0]))]
@@ -32,5 +34,5 @@ for direction in directions:
 for row in range(1, len(city_map) - 1):
     for col in range(1, len(city_map[0]) - 1):
         if goal_value == count_map[row][col]:
-            print(row + 1, col + 1)
+            print('%d %d' % (row + 1, col + 1))
             break
